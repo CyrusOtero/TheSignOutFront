@@ -10,6 +10,7 @@ class mathMode:
         self.cycle = 20
         self.days = 4
         
+        # Cool normDist generator 
         dist = np.random.normal(smean, ssd)
 
         seenSign = dist/cycle
@@ -17,9 +18,12 @@ class mathMode:
 
         signPerc = signForDays/slide
 
+        # check for %s higher than 100
         if signPerc >= 1:
             signPerc = 1
+
         signsSighted = signPerc*slide
+        # Format % to 2 decimals
         signPerF = "{:.2f}".format(signPerc*100)
 
         return signsSighted, signPerF
